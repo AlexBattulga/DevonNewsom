@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    @{
+        string name = "Devon";
+        string[] names = new string[]
+        {
+            name,
+            "Jesus",
+            "Leah",
+            "Mangqi"
+        };
+    }
+    <h1>Heelo @name from views!! (INDEX) It is @ViewBag.TimeFromWhoaController</h1>
+    <hr>
+    <h3><a href="/hello">REDIRECT ME!</a></h3>
+    <h3><a href="/json">JSON ME!</a></h3>
+    <hr>
+    @foreach(string n in names)
+    {
+        <p>@n</p>
+    }
+</body>
+</html>
