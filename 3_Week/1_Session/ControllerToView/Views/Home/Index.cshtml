@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1><span class="">User:</span> @ViewData["User"]</h1>
+    <hr>
+    <h3>Submit Form as NewPerson(string FirstName, string LastName, string Location)</h3>
+    <form action="/strings" method="post">
+        <input type="text" name="FirstName" placeholder="First Name">
+        <input type="text" name="LastName" placeholder="Last Name">
+        <label for="location">Location:</label>
+        <select name="Location">
+            @foreach(string city in ViewBag.Cities)
+            {
+                <option value="@city">@city</option>
+            }
+        </select>
+        <input type="submit" value="Add Person!">
+    </form>
+    <h3>Submit Form as NewPerson(Person person)</h3>
+    <form action="/person" method="post">
+        <input type="text" name="FirstName" placeholder="First Name">
+        <input type="text" name="LastName" placeholder="Last Name">
+        <label for="location">Location:</label>
+        <select name="Location">
+            @foreach(string city in ViewBag.Cities)
+            {
+                <option value="@city">@city</option>
+            }
+        </select>
+        <input type="submit" value="Add Person!">
+    </form>
+</body>
+</html>
