@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>This are some ninjas!</h2>
+@foreach(var ninja in ViewBag.Ninjas)
+{
+    <p>@ninja["FORST"] @ninja["last_name"] from @ninja["location"]</p>
+}
+<hr>
+<h2>Add a Ninja</h2>
+<form action="/create" method="post">
+    <input type="text" placeholder="First Name" name="first_name">
+    <input type="text" placeholder="Last Name" name="last_name">
+    <input type="text" placeholder="Location" name="location">
+    <input type="submit" value="New Ninja!">
+</form>
