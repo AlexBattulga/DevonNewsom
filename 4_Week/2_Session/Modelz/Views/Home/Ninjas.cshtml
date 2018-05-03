@@ -1,0 +1,6 @@
+@model List<Ninja>
+<h3>Here are some ninjas!</h3>
+@foreach(var ninja in Model)
+{
+    <p>@ninja.FirstName @ninja.LastName</p>
+}
