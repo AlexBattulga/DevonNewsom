@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IndexViewModel
+<div asp-validation-summary="All" class="summary"></div>
+<h2>Add a new Dojo</h2>
+<span asp-validation-for="NewDojo.city"></span>
+<span asp-validation-for="NewDojo.description"></span>
+
+<form asp-action="CreateDojo" asp-controller="Home" method="post">
+    <div class="form-group">
+        <label asp-for="NewDojo.city"></label>
+        <input asp-for="NewDojo.city"></input>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewDojo.description"></label>
+        <input asp-for="NewDojo.description"></input>
+    </div>
+    <input type="submit" value="New Dojo">
+</form>
+<hr>
+<h2>Add a new Ninja</h2>
+<span asp-validation-for="NewNinja.first_name"></span>
+<span asp-validation-for="NewNinja.last_name"></span>
+<form asp-action="CreateNinja" asp-controller="Home" method="post">
+    <div class="form-group">
+        <label asp-for="NewNinja.first_name"></label>
+        <input asp-for="NewNinja.first_name"></input>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewNinja.last_name"></label>
+        <input asp-for="NewNinja.last_name"></input>
+    </div>
+    <div class="form-group">
+        <select asp-for="NewNinja.dojo_id">
+        @foreach(var dojo in Model.Dojos)
+        {
+            <option value="@dojo["dojo_id"]">@dojo["city"]</option>
+        }
+        </select>
+    </div>
+    <input type="submit" value="New Dojo">
+</form>
