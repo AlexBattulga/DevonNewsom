@@ -1,0 +1,7 @@
+<h1>Check out our users!</h1>
+<hr>
+<h2>Dapper</h2>
+@foreach(var user in ViewBag.Users)
+{
+    <p>@user.FirstName.Length @user.LastName.Length</p>
+}
